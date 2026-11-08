@@ -1,7 +1,10 @@
 
 /* WATCH.IT - RESPONSIVE WEBSITE */
 
-/* Official colour palette */
+/* Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Teko:wght@400;500;600;700&display=swap');
+
+/* Official watch.it colour palette */
 :root {
   --black: #070410;
   --purple: #231651;
@@ -20,28 +23,38 @@ body {
   margin: 0;
   background: var(--black);
   color: var(--black);
-  font-family: Arial, sans-serif;
+  font-family: "Lato", sans-serif;
 }
 
-/* Header */
+/* Headings and buttons use Teko */
+.site-logo,
+.movie-text h2,
+.search-button,
+.watch-button {
+  font-family: "Teko", sans-serif;
+}
+
+/* HEADER */
 .site-header {
   background: var(--teal);
-  padding: 16px 30px;
+  padding: 16px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 20px;
+  gap: 16px;
 }
 
 .site-logo {
   margin: 0;
-  font-size: 32px;
+  font-size: 3em;
+  line-height: 1;
   color: var(--black);
 }
 
 .site-nav {
   display: flex;
-  gap: 25px;
+  align-items: center;
+  gap: 48px;
 }
 
 .site-nav a {
@@ -54,77 +67,78 @@ body {
   color: var(--purple);
 }
 
+/* SEARCH BUTTON */
 .search-button {
   background: var(--yellow);
   color: var(--black);
   border: 2px solid var(--black);
-  border-radius: 8px;
-  padding: 12px 22px;
-  font-weight: bold;
+  border-radius: 16px;
+  padding: 16px;
+  font-size: 2em;
+  line-height: 1;
   cursor: pointer;
 }
 
-/* Main movie grid */
+/* MAIN MOVIE GRID */
 .movie-grid {
   width: 100%;
-  max-width: 700px;
-  margin: 30px auto;
-  padding: 0 20px;
+  max-width: 900px;
+  margin: 48px auto;
+  padding: 0 48px;
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 20px;
+  gap: 16px;
 }
 
-/* Movie cards */
+/* MOVIE CARDS */
 .movie-card {
   min-width: 0;
   background: var(--white);
   display: flex;
   flex-direction: column;
   overflow: hidden;
-  box-shadow: 5px 5px 0 var(--black);
+  box-shadow: 5px 5px 0 var(--purple);
   transition: transform 0.3s ease,
               box-shadow 0.3s ease;
 }
 
-/* Card hover */
 .movie-card:hover {
   transform: translateY(-5px);
-  box-shadow: 8px 8px 0 var(--black);
+  box-shadow: 8px 8px 0 var(--purple);
 }
 
-/* Poster box */
+/* POSTER AREA */
 .poster-area {
   width: 100%;
   height: 300px;
   background: var(--white);
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
   overflow: hidden;
 }
 
-/* All images fully visible */
+/* Keep the entire image visible without stretching */
 .movie-poster {
-  
+  display: block;
   width: 100%;
   height: 100%;
- 
+  object-fit: contain;
   transition: filter 0.3s ease;
 }
 
-/* Image hover */
 .movie-card:hover .movie-poster {
   filter: brightness(1.08);
 }
 
-/* Movie information */
+/* MOVIE INFORMATION */
 .movie-details {
-  padding: 15px;
+  padding: 16px;
   display: flex;
   flex-direction: column;
   flex: 1;
-  gap: 15px;
+  gap: 16px;
+  min-width: 0;
 }
 
 .movie-text {
@@ -133,27 +147,29 @@ body {
 }
 
 .movie-text h2 {
-  margin: 0 0 10px;
-  font-size: 21px;
+  margin: 0 0 16px;
+  font-size: 1.5em;
+  line-height: 1.1;
 }
 
 .movie-text p {
   margin: 0;
-  font-size: 15px;
+  font-size: 16px;
   line-height: 1.5;
 }
 
-/* Watch buttons */
+/* WATCH NOW BUTTONS */
 .watch-button {
   background: var(--purple);
   color: var(--white);
   border: none;
-  border-radius: 8px;
-  padding: 15px;
-  font-size: 17px;
-  font-weight: bold;
+  border-radius: 16px;
+  padding: 16px;
+  font-size: 2em;
+  line-height: 1;
   cursor: pointer;
   transition: background 0.3s ease,
+              color 0.3s ease,
               transform 0.3s ease;
 }
 
@@ -163,10 +179,10 @@ body {
   transform: scale(1.03);
 }
 
-/* DESKTOP - 1024px and above */
+/* DESKTOP - 1024px AND ABOVE */
 @media (min-width: 1024px) {
 
-  /* Roger Rabbit featured at top */
+  /* Roger Rabbit featured banner */
   .movie-card.featured {
     grid-column: 1 / -1;
     display: flex;
@@ -177,11 +193,10 @@ body {
     height: 220px;
   }
 
-  /* Description left, button right */
+  /* Featured description left, button right */
   .movie-card.featured .movie-details {
     flex-direction: row;
     align-items: stretch;
-    padding: 12px;
   }
 
   .movie-card.featured .watch-button {
@@ -202,42 +217,43 @@ body {
     height: 300px;
   }
 
-  /* Hidden Figures, Palm Springs, Barbie */
+  /* Hidden Figures, Palm Springs and Barbie */
   .movie-card:nth-child(n+4) {
     grid-column: 1 / -1;
     display: grid;
     grid-template-columns: 1fr 1fr;
   }
 
-  /* Image left */
+  /* Image on the left */
   .movie-card:nth-child(n+4) .poster-area {
     height: 250px;
   }
 
-  /* Text and button right */
+  /* Description and button on the right */
   .movie-card:nth-child(n+4) .movie-details {
     justify-content: space-between;
-    padding: 12px;
   }
 }
 
-/* TABLET - 720px to 1023px */
+/* TABLET - 720px TO 1023px */
 @media (min-width: 720px) and (max-width: 1023px) {
 
   .site-header {
-    padding: 15px 20px;
+    padding: 16px;
   }
 
   .site-nav {
-    gap: 15px;
+    gap: 32px;
   }
 
   .movie-grid {
-    max-width: 760px;
+    max-width: 900px;
+    margin: 32px auto;
+    padding: 0 32px;
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
-  /* Six vertical cards in two columns */
+  /* All six cards arranged in two columns */
   .movie-card,
   .movie-card.featured {
     grid-column: auto;
@@ -259,16 +275,16 @@ body {
   }
 }
 
-/* MOBILE - below 720px */
+/* MOBILE - BELOW 720px */
 @media (max-width: 719px) {
 
   .site-header {
-    padding: 15px;
-    gap: 10px;
+    padding: 16px;
+    gap: 16px;
   }
 
   .site-logo {
-    font-size: 26px;
+    font-size: 2em;
   }
 
   .site-nav {
@@ -276,15 +292,16 @@ body {
   }
 
   .search-button {
-    padding: 10px 15px;
+    padding: 16px;
   }
 
-  /* Single column */
+  /* One movie per row */
   .movie-grid {
-    max-width: 450px;
+    max-width: 900px;
+    margin: 16px auto;
+    padding: 0 16px;
     grid-template-columns: 1fr;
-    margin: 20px auto;
-    padding: 0 15px;
+    gap: 16px;
   }
 
   .movie-card,
@@ -302,7 +319,7 @@ body {
   .movie-details,
   .movie-card.featured .movie-details {
     flex-direction: column;
-    padding: 15px;
+    padding: 16px;
   }
 
   .watch-button,
@@ -311,23 +328,7 @@ body {
   }
 }
 
-/* Small mobile screens */
-@media (max-width: 380px) {
-
-  .site-logo {
-    font-size: 23px;
-  }
-
-  .movie-text h2 {
-    font-size: 19px;
-  }
-
-  .poster-area {
-    height: 270px;
-  }
-}
-
-/* Accessibility */
+/* ACCESSIBILITY - REDUCED MOTION */
 @media (prefers-reduced-motion: reduce) {
 
   .movie-card,
@@ -339,5 +340,25 @@ body {
   .movie-card:hover,
   .watch-button:hover {
     transform: none;
+  }
+}
+
+
+/* Improve poster backgrounds without cropping images */
+.poster-area {
+  background: var(--purple);
+}
+
+.movie-poster {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* Featured Roger Rabbit banner */
+@media (min-width: 1024px) {
+  .movie-card.featured .poster-area {
+    height: 250px;
+    background: var(--purple);
   }
 }
