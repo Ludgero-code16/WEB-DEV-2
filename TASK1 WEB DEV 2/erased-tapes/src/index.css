@@ -1,0 +1,19 @@
+
+/* Remove default browser spacing */
+html,
+body,
+#root {
+  margin: 0;
+  width: 100%;
+  min-width: 320px;
+}
+
+/* Smooth scrolling between sections */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Use the same font throughout */
+body {
+  font-family: Arial, sans-serif;
+}

@@ -1,0 +1,501 @@
+
+/* =====================================
+   TASK 1 - ERASED TAPES RECORDS
+   Complete CSS Styling
+===================================== */
+
+/* GENERAL STYLING */
+
+/* Apply consistent sizing to all elements */
+* {
+  box-sizing: border-box;
+}
+
+/* Set the page background and font */
+body {
+  margin: 0;
+  background-color: #e9e9e9;
+  color: #14181d;
+  font-family: Arial, sans-serif;
+}
+
+/* Main React application */
+.app {
+  width: 100%;
+}
+
+/* =====================================
+   HEADER
+===================================== */
+
+/* Centre the logo and navigation */
+.site-header {
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 50px 0;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 50px;
+}
+
+/* Logo is 200px wide */
+.site-logo {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  object-fit: contain;
+}
+
+/* Divide navigation into three equal columns */
+.site-nav {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  width: 100%;
+  gap: 10px;
+}
+
+/* Centre each navigation link */
+.site-nav a {
+  text-align: center;
+  color: #14181d;
+  text-decoration: none;
+  font-size: 16px;
+}
+
+/* Navigation hover effect */
+.site-nav a:hover {
+  text-decoration: underline;
+}
+
+/* =====================================
+   MAIN CONTENT
+===================================== */
+
+/* White content container */
+.main-content {
+  background-color: white;
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+  border: 1px solid #999;
+}
+
+/* =====================================
+   BLOG ARTICLE
+===================================== */
+
+/* Add spacing inside the article */
+.blog-article {
+  padding: 50px;
+}
+
+/* Large Erased Tapes heading */
+.blog-article h1 {
+  font-size: 72px;
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: -2px;
+  margin: 0;
+}
+
+/* Subtitle directly below the main heading */
+.article-subtitle {
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 1.2;
+  margin: 0 0 30px;
+}
+
+/* =====================================
+   INTRODUCTION
+===================================== */
+
+/* Introduction spans the full article width */
+.article-introduction {
+  width: 100%;
+  margin-bottom: 25px;
+}
+
+/* Introduction paragraph */
+.article-introduction p {
+  font-size: 16px;
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* =====================================
+   THREE-COLUMN ARTICLE
+===================================== */
+
+/* Display article text in three columns */
+.article-text {
+  column-count: 3;
+  column-gap: 30px;
+  column-fill: balance;
+}
+
+/* Article paragraphs */
+.article-text p {
+  font-size: 16px;
+  line-height: 1.5;
+  margin: 0 0 20px;
+}
+
+/* Article headings */
+.article-text h2 {
+  font-size: 24px;
+  font-weight: 700;
+  margin: 0 0 15px;
+  break-after: avoid;
+}
+
+/* Smaller article headings */
+.article-text h3 {
+  font-size: 20px;
+  margin: 20px 0 15px;
+  break-after: avoid;
+}
+
+/* =====================================
+   ALBUM GALLERY
+===================================== */
+
+/* One large image and four smaller images */
+.album-gallery {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: 100%;
+}
+
+/* Large image on the left */
+.album-large {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Four smaller images on the right */
+.album-small-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+}
+
+/* Style the smaller album images */
+.album-small-grid img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* =====================================
+   AUTHOR SECTION
+===================================== */
+
+/* Position biography, photograph and icons */
+.author-section {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 50px;
+}
+
+/* Author biography takes available space */
+.author-text {
+  flex: 1;
+  min-width: 0;
+}
+
+/* Centre the author heading */
+.author-text h2 {
+  text-align: center;
+  font-size: 24px;
+  margin: 0 0 20px;
+}
+
+/* Author biography paragraph */
+.author-text p {
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+/* Circular author photograph */
+.author-image {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+/* =====================================
+   SOCIAL MEDIA ICONS
+===================================== */
+
+/* Default horizontal icon layout */
+.social-icons {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Set social icons to 50px */
+.social-icons img {
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
+  display: block;
+}
+
+/* Make links clickable */
+.social-icons a {
+  display: inline-flex;
+  cursor: pointer;
+}
+
+/* Social icon hover effect */
+.social-icons a:hover {
+  opacity: 0.7;
+}
+
+/* Keyboard focus */
+.social-icons a:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 4px;
+}
+
+/* Stack author icons vertically */
+.author-section .social-icons {
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* =====================================
+   COMMENTS SECTION
+===================================== */
+
+/* Grey comments background */
+.comments-section {
+  background-color: #d3d3d3;
+  padding: 50px;
+}
+
+/* Comments heading */
+.comments-section h2 {
+  font-size: 24px;
+  margin: 0 0 25px;
+}
+
+/* Space between comments */
+.comment {
+  margin-bottom: 25px;
+}
+
+/* Remove unnecessary space after last comment */
+.comment:last-child {
+  margin-bottom: 0;
+}
+
+/* Comment username */
+.comment h3 {
+  font-size: 16px;
+  margin: 0 0 8px;
+}
+
+/* Comment text */
+.comment p {
+  font-size: 16px;
+  line-height: 1.5;
+  margin: 0;
+  max-width: 600px;
+}
+
+/* =====================================
+   FOOTER
+===================================== */
+
+/* Full-width dark footer */
+.site-footer {
+  background-color: #14181d;
+  color: white;
+  text-align: center;
+  padding: 50px;
+}
+
+/* Footer navigation with three equal columns */
+.footer-nav {
+  max-width: 1000px;
+  margin: 0 auto 30px;
+
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+/* Footer navigation links */
+.footer-nav a {
+  color: white;
+  text-align: center;
+  text-decoration: none;
+}
+
+/* Footer hover effect */
+.footer-nav a:hover {
+  text-decoration: underline;
+}
+
+/* Copyright information */
+.copyright {
+  margin: 20px 0;
+  font-size: 14px;
+}
+
+/* Centre footer icons horizontally */
+.site-footer .social-icons {
+  justify-content: center;
+  flex-direction: row;
+}
+
+/* =====================================
+   TABLET RESPONSIVE DESIGN
+   Screens up to 1024px
+===================================== */
+
+@media (max-width: 1024px) {
+
+  /* Reduce header width */
+  .site-header {
+    width: 90%;
+  }
+
+  /* Reduce main content width */
+  .main-content {
+    width: 90%;
+  }
+
+  /* Adjust title size */
+  .blog-article h1 {
+    font-size: 60px;
+  }
+
+  /* Display article in two columns */
+  .article-text {
+    column-count: 2;
+  }
+
+  /* Allow author layout to wrap */
+  .author-section {
+    flex-wrap: wrap;
+  }
+}
+
+/* =====================================
+   MOBILE RESPONSIVE DESIGN
+   Screens up to 720px
+===================================== */
+
+@media (max-width: 720px) {
+
+  /* Reduce header spacing */
+  .site-header {
+    padding: 25px 0;
+    gap: 25px;
+  }
+
+  /* Reduce logo size on mobile */
+  .site-logo {
+    width: 150px;
+    height: 150px;
+  }
+
+  /* Keep navigation in three columns */
+  .site-nav {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 5px;
+  }
+
+  /* Reduce navigation font size */
+  .site-nav a {
+    font-size: 14px;
+  }
+
+  /* Main content uses full screen width */
+  .main-content {
+    width: 100%;
+  }
+
+  /* Reduce article padding */
+  .blog-article {
+    padding: 25px;
+  }
+
+  /* Responsive main heading */
+  .blog-article h1 {
+    font-size: clamp(32px, 9vw, 48px);
+    letter-spacing: -1px;
+  }
+
+  /* Smaller subtitle */
+  .article-subtitle {
+    font-size: 18px;
+    margin-bottom: 25px;
+  }
+
+  /* Introduction remains full width */
+  .article-introduction {
+    width: 100%;
+  }
+
+  /* Display article in one column */
+  .article-text {
+    column-count: 1;
+  }
+
+  /* Stack gallery on mobile */
+  .album-gallery {
+    grid-template-columns: 1fr;
+  }
+
+  /* Keep four smaller albums in two columns */
+  .album-small-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* Stack author section vertically */
+  .author-section {
+    flex-direction: column;
+    text-align: center;
+    padding: 25px;
+  }
+
+  /* Author icons horizontal on mobile */
+  .author-section .social-icons {
+    flex-direction: row;
+  }
+
+  /* Reduce comments padding */
+  .comments-section {
+    padding: 25px;
+  }
+
+  /* Reduce footer padding */
+  .site-footer {
+    padding: 25px;
+  }
+
+  /* Footer navigation remains three columns */
+  .footer-nav {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 5px;
+  }
+
+  /* Reduce footer navigation font size */
+  .footer-nav a {
+    font-size: 14px;
+  }
+}
